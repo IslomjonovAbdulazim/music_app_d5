@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_app_d5/pages/auth/register_page.dart';
+import 'package:music_app_d5/pages/auth/sign_in_page.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -53,7 +56,9 @@ class _StartPageState extends State<StartPage> {
                         child: CupertinoButton(
                           color: Color(0xff42C83C),
                           borderRadius: BorderRadius.circular(20),
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(RegisterPage());
+                          },
                           child: Text(
                             "Register",
                             style: GoogleFonts.quicksand(
@@ -67,13 +72,28 @@ class _StartPageState extends State<StartPage> {
                     ),
                     SizedBox(width: 20),
                     Expanded(
-                      child: SizedBox(
-                        height: 70,
+                      child: Container(
+                        height: 68,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0xff313131),
+                          ),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                         child: CupertinoButton(
                           color: Color(0xffffffff),
                           borderRadius: BorderRadius.circular(20),
-                          onPressed: () {},
-                          child: Text("Register"),
+                          onPressed: () {
+                            Get.to(SignInPage());
+                          },
+                          child: Text(
+                            "Sign In",
+                            style: GoogleFonts.quicksand(
+                              color: Color(0xff313131),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
                         ),
                       ),
                     ),
