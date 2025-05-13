@@ -15,10 +15,16 @@ class _StartPageState extends State<StartPage> {
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
-            children: [],
+            children: [
+              Image.asset(
+                "assets/spotify.png",
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 }
+
+
