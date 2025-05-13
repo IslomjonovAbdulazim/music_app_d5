@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -21,7 +23,9 @@ class _SignInPageState extends State<SignInPage> {
             padding: EdgeInsets.zero,
             color: Colors.grey.shade100,
             borderRadius: BorderRadius.circular(100),
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
             child: Icon(
               CupertinoIcons.chevron_left,
               color: Color(0xff414141),
@@ -37,11 +41,79 @@ class _SignInPageState extends State<SignInPage> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20),
-          child: Column(
-            children: [],
+          child: Center(
+            child: Column(
+              children: [
+                // Sign In
+
+                // Click Here
+
+                TextField(
+                  style: GoogleFonts.quicksand(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xff414141),
+                  ),
+                  cursorColor: Color(0xff414141),
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xff383838),
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xff383838),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    contentPadding: EdgeInsets.all(25),
+                    hintText: "enter username or email",
+                    hintStyle: GoogleFonts.quicksand(
+                      color: Color(0xff383838),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
