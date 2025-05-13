@@ -13,6 +13,7 @@ class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20),
@@ -51,6 +52,25 @@ class _StartPageState extends State<StartPage> {
                         height: 70,
                         child: CupertinoButton(
                           color: Color(0xff42C83C),
+                          borderRadius: BorderRadius.circular(20),
+                          onPressed: () {},
+                          child: Text(
+                            "Register",
+                            style: GoogleFonts.quicksand(
+                              color: Color(0xffffffff),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: SizedBox(
+                        height: 70,
+                        child: CupertinoButton(
+                          color: Color(0xffffffff),
                           borderRadius: BorderRadius.circular(20),
                           onPressed: () {},
                           child: Text("Register"),
