@@ -6,7 +6,7 @@ import 'package:music_app_d5/pages/auth/start_page.dart';
 void main() {
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (context) => MyApp(),
     ),
   );
