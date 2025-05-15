@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_app_d5/pages/home/main_page.dart';
+
 import 'register_page.dart';
 
 class SignInPage extends StatefulWidget {
@@ -182,7 +184,9 @@ class _SignInPageState extends State<SignInPage> {
                   child: CupertinoButton(
                     color: Color(0xff42C83C),
                     borderRadius: BorderRadius.circular(30),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.offAll(MainPage());
+                    },
                     child: Center(
                       child: Text(
                         "Sign In",

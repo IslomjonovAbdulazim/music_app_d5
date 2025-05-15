@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_app_d5/pages/home/main_page.dart';
 import 'sign_in_page.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -199,7 +200,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: CupertinoButton(
                     color: Color(0xff42C83C),
                     borderRadius: BorderRadius.circular(30),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.offAll(MainPage());
+                    },
                     child: Center(
                       child: Text(
                         "Register",
