@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:music_app_d5/pages/auth/register_page.dart';
-import 'package:music_app_d5/pages/auth/sign_in_page.dart';
+import 'register_page.dart';
+import 'sign_in_page.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});

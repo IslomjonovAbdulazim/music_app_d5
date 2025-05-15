@@ -1,7 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:music_app_d5/pages/auth/start_page.dart';
+import 'pages/auth/start_page.dart';
 
 void main() {
   runApp(
