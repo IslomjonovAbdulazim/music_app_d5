@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_app_d5/pages/auth/register_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -11,6 +12,8 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  bool isHidden = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +48,37 @@ class _SignInPageState extends State<SignInPage> {
             child: Column(
               children: [
                 // Sign In
+                Text(
+                  "Sign In",
+                  style: GoogleFonts.quicksand(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 30,
+                    color: Color(0xff383838),
+                  ),
+                ),
+                SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "If you need any support ",
+                      style: GoogleFonts.quicksand(
+                        color: Color(0xff383838),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                      ),
+                    ),
+                    Text(
+                      "click here",
+                      style: GoogleFonts.quicksand(
+                        color: Color(0xff38B432),
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 50),
 
                 // Click Here
 
@@ -70,7 +104,7 @@ class _SignInPageState extends State<SignInPage> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     contentPadding: EdgeInsets.all(25),
-                    hintText: "enter username or email",
+                    hintText: "Enter Username or Email",
                     hintStyle: GoogleFonts.quicksand(
                       color: Color(0xff383838),
                       fontSize: 18,
@@ -78,6 +112,160 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                 ),
+                SizedBox(height: 15),
+                TextField(
+                  obscureText: isHidden,
+                  style: GoogleFonts.quicksand(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xff414141),
+                  ),
+                  cursorColor: Color(0xff414141),
+                  decoration: InputDecoration(
+                    suffixIcon: CupertinoButton(
+                      onPressed: () {
+                        if (isHidden == true) {
+                          isHidden = false;
+                        } else if (isHidden == false) {
+                          isHidden = true;
+                        }
+                        setState(() {});
+                      },
+                      child: Icon(
+                        isHidden
+                            ? CupertinoIcons.eye_fill
+                            : CupertinoIcons.eye_slash_fill,
+                        color: Color(0xff8D8D8D),
+                        size: 25,
+                      ),
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xff383838),
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color(0xff383838),
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    contentPadding: EdgeInsets.all(25),
+                    hintText: "Password",
+                    hintStyle: GoogleFonts.quicksand(
+                      color: Color(0xff383838),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 10),
+                Row(
+                  children: [
+                    Text(
+                      "Recovery password",
+                      style: GoogleFonts.quicksand(
+                        color: Color(0xff383838),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 10),
+                SizedBox(
+                  height: 80,
+                  child: CupertinoButton(
+                    color: Color(0xff42C83C),
+                    borderRadius: BorderRadius.circular(30),
+                    onPressed: () {},
+                    child: Center(
+                      child: Text(
+                        "Sign In",
+                        style: GoogleFonts.quicksand(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(child: Divider()),
+                    SizedBox(width: 10),
+                    Text(
+                      "Or",
+                      style: GoogleFonts.quicksand(
+                        color: Color(0xff383838),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(child: Divider()),
+                  ],
+                ),
+
+                Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CupertinoButton(
+                      onPressed: () {},
+                      child: Image.asset(
+                        "assets/apple.png",
+                        height: 30,
+                        width: 30,
+                      ),
+                    ),
+                    CupertinoButton(
+                      onPressed: () {},
+                      child: Image.asset(
+                        "assets/google.png",
+                        height: 30,
+                        width: 30,
+                      ),
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Not A Member?",
+                      style: GoogleFonts.quicksand(
+                        color: Color(0xff383838),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    CupertinoButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () {
+                        Get.to(RegisterPage());
+                      },
+                      child: Text(
+                        "Register Now",
+                        style: GoogleFonts.quicksand(
+                          color: Color(0xff288CE9),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
               ],
             ),
           ),
@@ -86,34 +274,3 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
