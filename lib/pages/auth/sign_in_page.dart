@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:music_app_d5/pages/auth/register_page.dart';
+import 'register_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -252,7 +252,7 @@ class _SignInPageState extends State<SignInPage> {
                     CupertinoButton(
                       padding: EdgeInsets.zero,
                       onPressed: () {
-                        Get.to(RegisterPage());
+                        Get.off(RegisterPage());
                       },
                       child: Text(
                         "Register Now",
