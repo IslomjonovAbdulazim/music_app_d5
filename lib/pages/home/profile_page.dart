@@ -72,6 +72,20 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  SizedBox(width: 20),
+                  Text("PUBLIC PLAYLISTS"),
+                ],
+              ),
+              SizedBox(height: 10),
+              _MusicItem(
+                image: "assets/profile-2.png",
+                title: "Dont Smile At Me",
+                subtitle: "Billie Eilish",
+                duration: "5:33",
+              ),
             ],
           ),
         ),
