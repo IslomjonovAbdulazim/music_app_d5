@@ -151,10 +151,10 @@ class _MusicItem extends StatelessWidget {
 
   const _MusicItem(
       {super.key,
-      required this.image,
-      required this.title,
-      required this.subtitle,
-      required this.duration});
+        required this.image,
+        required this.title,
+        required this.subtitle,
+        required this.duration});
 
   @override
   Widget build(BuildContext context) {
@@ -216,3 +216,6 @@ class _MusicItem extends StatelessWidget {
     );
   }
 }
+
+
+
