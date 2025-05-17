@@ -10,6 +10,8 @@ class LikedPage extends StatefulWidget {
 }
 
 class _LikedPageState extends State<LikedPage> {
+  var likedSongs = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,6 +98,41 @@ class _LikedPageState extends State<LikedPage> {
             ),
           ),
           SizedBox(height: 10),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              children: [
+                _Song(
+                  title: "Dont Smile At Me",
+                  artist: "Billie Eilish",
+                  duration: "5:33",
+                  isLiked: likedSongs.contains(1),
+                  onTap: () {
+                    if (likedSongs.contains(1)) {
+                      likedSongs.remove(1);
+                    } else {
+                      likedSongs.add(1);
+                    }
+                    setState(() {});
+                  },
+                ),
+                _Song(
+                  title: "Lil Bubble Gum",
+                  artist: "Billie Eilish",
+                  duration: "5:33",
+                  isLiked: likedSongs.contains(2),
+                  onTap: () {
+                    if (likedSongs.contains(2)) {
+                      likedSongs.remove(2);
+                    } else {
+                      likedSongs.add(2);
+                    }
+                    setState(() {});
+                  },
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -165,9 +202,12 @@ class _Song extends StatelessWidget {
           // Play - Container
           Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Title - Text
+                Text(title),
                 // Artist - Text
+                Text(artist),
               ],
             ),
           ),
