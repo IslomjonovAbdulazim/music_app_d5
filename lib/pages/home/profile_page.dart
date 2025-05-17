@@ -37,8 +37,22 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Column(
                     children: [
                       // Avatar
+                      Image.asset(
+                        "assets/profile-1.png",
+                        height: 100,
+                        width: 100,
+                      ),
 
                       // Email
+                      SizedBox(height: 10),
+                      Text(
+                        "Soroushnorozyui@gmail.com",
+                        style: GoogleFonts.quicksand(
+                          color: Color(0xff222222),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 20),
 
                       // Fullname
 
@@ -63,8 +77,24 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ],
                           ),
+                          SizedBox(width: 50),
                           Column(
-                            children: [],
+                            children: [
+                              Text(
+                                "243",
+                                style: GoogleFonts.quicksand(
+                                  color: Color(0xff222222),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              Text(
+                                "Following",
+                                style: GoogleFonts.quicksand(
+                                  color: Color(0xff585858),
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -76,15 +106,34 @@ class _ProfilePageState extends State<ProfilePage> {
               Row(
                 children: [
                   SizedBox(width: 20),
-                  Text("PUBLIC PLAYLISTS"),
+                  Text(
+                    "PUBLIC PLAYLISTS",
+                    style: GoogleFonts.quicksand(
+                      color: Color(0xff222222),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 10),
-              _MusicItem(
-                image: "assets/profile-2.png",
-                title: "Dont Smile At Me",
-                subtitle: "Billie Eilish",
-                duration: "5:33",
+              Expanded(
+                child: ListView(
+                  children: [
+                    _MusicItem(
+                      image: "assets/profile-2.png",
+                      title: "Dont Smile At Me",
+                      subtitle: "Billie Eilish",
+                      duration: "5:33",
+                    ),
+                    _MusicItem(
+                      image: "assets/profile-3.png",
+                      title: "As It Was",
+                      subtitle: "Harry Styles",
+                      duration: "5:33",
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -121,17 +170,47 @@ class _MusicItem extends StatelessWidget {
               width: 56,
             ),
           ),
+          SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title),
-                Text(subtitle),
+                Text(
+                  title,
+                  style: GoogleFonts.quicksand(
+                    color: Color(0xff000000),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  subtitle,
+                  style: GoogleFonts.quicksand(
+                    color: Color(0xff000000),
+                    fontSize: 15,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ],
             ),
           ),
-          Text(duration),
-          Icon(Icons.linear_scale_sharp),
+          SizedBox(width: 10),
+          Text(
+            duration,
+            style: GoogleFonts.quicksand(
+              color: Color(0xff000000),
+              fontWeight: FontWeight.w600,
+              fontSize: 18,
+            ),
+          ),
+          SizedBox(width: 10),
+          Icon(
+            Icons.linear_scale_sharp,
+            color: Color(0xff000000),
+          ),
         ],
       ),
     );
