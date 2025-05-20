@@ -47,11 +47,11 @@ class _LikedPageState extends State<LikedPage> {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: 15),
+          SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis adipiscing vestibulum orci enim, nascetur vitae ",
+              "Lorem ipsum dolor sit amet, consectetur",
               style: GoogleFonts.quicksand(
                 color: Color(0xff838383),
                 fontSize: 15,
@@ -73,7 +73,6 @@ class _LikedPageState extends State<LikedPage> {
               ),
             ],
           ),
-          SizedBox(height: 10),
           SizedBox(
             height: 170,
             child: ListView(
@@ -97,7 +96,34 @@ class _LikedPageState extends State<LikedPage> {
               ],
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              children: [
+                Text(
+                  "Songs",
+                  style: GoogleFonts.quicksand(
+                    color: Color(0xff222222),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                Spacer(),
+                CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                  child: Text(
+                    "See More",
+                    style: GoogleFonts.quicksand(
+                      color: Color(0xff131313),
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           Expanded(
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 20),
@@ -195,23 +221,60 @@ class _Song extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoButton(
-      onPressed: () {},
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
           // Play - Container
+          SizedBox(
+            height: 50,
+            width: 50,
+            child: CupertinoButton(
+              padding: EdgeInsets.zero,
+              color: Color(0xffE6E6E6),
+              borderRadius: BorderRadius.circular(100),
+              onPressed: () {},
+              child: Icon(
+                CupertinoIcons.play_arrow_solid,
+                color: Color(0xff555555),
+              ),
+            ),
+          ),
+          SizedBox(width: 10),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Title - Text
-                Text(title),
+                Text(
+                  title,
+                  style: GoogleFonts.quicksand(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
                 // Artist - Text
-                Text(artist),
+                Text(
+                  artist,
+                  style: GoogleFonts.quicksand(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
               ],
             ),
           ),
           // Duration - Text
+          Text(
+            duration,
+            style: GoogleFonts.quicksand(
+              color: Colors.black,
+              fontSize: 1,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
 
           CupertinoButton(
             padding: EdgeInsets.zero,
