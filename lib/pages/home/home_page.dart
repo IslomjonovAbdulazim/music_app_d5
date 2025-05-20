@@ -142,7 +142,17 @@ class _HomePageState extends State<HomePage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-
+                  _Music(
+                    image: "assets/home-1.png",
+                    title: "Bad Guy",
+                    artist: "Billie Eilish",
+                  ),
+                  SizedBox(width: 10),
+                  _Music(
+                    image: "assets/home-2.png",
+                    title: "Scorpion",
+                    artist: "Drake",
+                  ),
                 ],
               ),
             ),
@@ -157,20 +167,34 @@ class _Music extends StatelessWidget {
   final String image;
   final String title;
   final String artist;
-  const _Music({super.key, required this.image, required this.title, required this.artist});
+
+  const _Music(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.artist});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 150,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
+          Image.asset(image),
+          SizedBox(height: 8),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title),
+                Text(artist),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
-
-
