@@ -157,7 +157,7 @@ class _Music extends StatelessWidget {
   final String image;
   final String title;
   final String artist;
-  const _Music({super.key});
+  const _Music({super.key, required this.image, required this.title, required this.artist});
 
   @override
   Widget build(BuildContext context) {
