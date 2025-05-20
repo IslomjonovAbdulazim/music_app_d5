@@ -136,9 +136,41 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
+            SizedBox(height: 10),
+            SizedBox(
+              height: 250,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+class _Music extends StatelessWidget {
+  final String image;
+  final String title;
+  final String artist;
+  const _Music({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 150,
+      child: Column(
+        children: [
+
+        ],
+      ),
+    );
+  }
+}
+
+
+
