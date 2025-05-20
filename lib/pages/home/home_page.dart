@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -58,16 +59,38 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("New Album"),
+                        Text(
+                          "New Album",
+                          style: GoogleFonts.quicksand(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                          ),
+                        ),
                         Row(
                           children: [
                             SizedBox(
                               width: 170,
-                              child: Text("Happier Than Ever"),
+                              child: Text(
+                                "Happier Than Ever",
+                                style: GoogleFonts.quicksand(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.0,
+                                ),
+                              ),
                             ),
                           ],
                         ),
-                        Text("Billie Eilish"),
+                        Text(
+                          "Billie Eilish",
+                          style: GoogleFonts.quicksand(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                          ),
+                        ),
                       ],
                     ),
                   ),
