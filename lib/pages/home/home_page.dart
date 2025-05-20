@@ -10,6 +10,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var selectedOption = "News";
+  final options = ["News", "Video", "Artists", "Podcasts"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,6 +104,36 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ],
+              ),
+            ),
+            SizedBox(height: 10),
+            SizedBox(
+              height: 40,
+              child: ListView.builder(
+                itemCount: options.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: CupertinoButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () {
+                        selectedOption = options[index];
+                        setState(() {});
+                      },
+                      child: Text(
+                        options[index],
+                        style: GoogleFonts.quicksand(
+                          color: selectedOption == options[index]
+                              ? Color(0xff000000)
+                              : Color(0xffBEBEBE),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           ],
