@@ -17,6 +17,7 @@ dependencies:
   get: ^4.7.2
   google_fonts: ^6.2.1
   shared_preferences: ^2.5.3
+  just_audio:
 
 dev_dependencies:
   flutter_test:
