@@ -28,7 +28,7 @@ class _PlayPageState extends State<PlayPage> {
   String format(Duration duration) {
     final min = duration.inMinutes;
     final sec = duration.inSeconds % 60;
-    return "$min:$sec";
+    return "$min:${sec.toString().padLeft(2, "0")}";
   }
 
   @override
@@ -77,6 +77,7 @@ class _PlayPageState extends State<PlayPage> {
                   builder: (context, snapshot) {
                     final position = snapshot.data?.inMilliseconds ?? 0;
                     return Slider(
+                      padding: EdgeInsets.zero,
                       value: position.toDouble(),
                       min: 0,
                       max: (player.duration?.inMilliseconds ?? 0).toDouble(),
@@ -85,6 +86,19 @@ class _PlayPageState extends State<PlayPage> {
                       },
                     );
                   }),
+
+              Row(
+                children: [
+                  StreamBuilder<Duration>(
+                      stream: player.positionStream,
+                      builder: (context, snapshot) {
+                        final pos = snapshot.data ?? Duration.zero;
+                        return Text(format(pos));
+                      }),
+                  Spacer(),
+                  Text(format(duration)),
+                ],
+              ),
 
               SizedBox(height: 20),
               StreamBuilder<bool>(
