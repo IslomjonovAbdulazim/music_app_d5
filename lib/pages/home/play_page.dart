@@ -58,20 +58,34 @@ class _PlayPageState extends State<PlayPage> {
 
               // Slider
 
-              CupertinoButton(
-                color: Color(0xff42C83C),
-                borderRadius: BorderRadius.circular(100),
-                onPressed: () async {},
-                child: SizedBox(
-                  height: 60,
-                  width: 60,
-                  child: Icon(
-                    CupertinoIcons.play,
-                    size: 30,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              SizedBox(height: 20),
+              StreamBuilder<bool>(
+                  stream: player.playingStream,
+                  builder: (context, snapshot) {
+                    final isPlaying = snapshot.data == true;
+                    return CupertinoButton(
+                      color: Color(0xff42C83C),
+                      borderRadius: BorderRadius.circular(100),
+                      onPressed: () async {
+                        if (isPlaying) {
+                          await player.pause();
+                        } else {
+                          await player.play();
+                        }
+                      },
+                      child: SizedBox(
+                        height: 60,
+                        width: 60,
+                        child: Icon(
+                          isPlaying
+                              ? CupertinoIcons.pause
+                              : CupertinoIcons.play,
+                          size: 30,
+                          color: Colors.white,
+                        ),
+                      ),
+                    );
+                  }),
             ],
           ),
         ),
