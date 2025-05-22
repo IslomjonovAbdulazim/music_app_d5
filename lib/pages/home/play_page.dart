@@ -12,7 +12,29 @@ class _PlayPageState extends State<PlayPage> {
   AudioPlayer player = AudioPlayer();
 
   @override
+  void initState() {
+    setUp();
+    super.initState();
+  }
+
+  void setUp() async {
+    await player.setAsset("assets/music.mp3");
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold();
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
