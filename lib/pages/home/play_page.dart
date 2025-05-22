@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -30,20 +31,51 @@ class _PlayPageState extends State<PlayPage> {
         child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
-            children: [],
+            children: [
+              Image.asset(
+                "assets/play-1.png",
+                height: 400,
+                width: 350,
+                fit: BoxFit.cover,
+              ),
+              Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Bad Guy"),
+                      Text("Billie Eilish"),
+                    ],
+                  ),
+                  Spacer(),
+                  CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    onPressed: () {},
+                    child: Icon(CupertinoIcons.heart),
+                  ),
+                ],
+              ),
+
+              // Slider
+
+              CupertinoButton(
+                color: Color(0xff42C83C),
+                borderRadius: BorderRadius.circular(100),
+                onPressed: () async {},
+                child: SizedBox(
+                  height: 60,
+                  width: 60,
+                  child: Icon(
+                    CupertinoIcons.play,
+                    size: 30,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
