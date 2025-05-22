@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_app_d5/pages/home/play_page.dart';
 
 class LikedPage extends StatefulWidget {
   const LikedPage({super.key});
@@ -233,7 +235,9 @@ class _Song extends StatelessWidget {
               padding: EdgeInsets.zero,
               color: Color(0xffE6E6E6),
               borderRadius: BorderRadius.circular(100),
-              onPressed: () {},
+              onPressed: () {
+                Get.to(PlayPage());
+              },
               child: Icon(
                 CupertinoIcons.play_arrow_solid,
                 color: Color(0xff555555),
