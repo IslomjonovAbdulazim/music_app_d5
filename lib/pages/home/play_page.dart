@@ -11,6 +11,7 @@ class PlayPage extends StatefulWidget {
 
 class _PlayPageState extends State<PlayPage> {
   AudioPlayer player = AudioPlayer();
+  var duration = Duration.zero;
 
   @override
   void initState() {
@@ -20,6 +21,14 @@ class _PlayPageState extends State<PlayPage> {
 
   void setUp() async {
     await player.setAsset("assets/music.mp3");
+    duration = player.duration ?? Duration.zero;
+    setState(() {});
+  }
+
+  String format(Duration duration) {
+    final min = duration.inMinutes;
+    final sec = duration.inSeconds % 60;
+    return "$min:$sec";
   }
 
   @override
@@ -63,6 +72,19 @@ class _PlayPageState extends State<PlayPage> {
               ),
 
               // Slider
+              StreamBuilder<Duration>(
+                  stream: player.positionStream,
+                  builder: (context, snapshot) {
+                    final position = snapshot.data?.inMilliseconds ?? 0;
+                    return Slider(
+                      value: position.toDouble(),
+                      min: 0,
+                      max: (player.duration?.inMilliseconds ?? 0).toDouble(),
+                      onChanged: (value) {
+                        player.seek(Duration(milliseconds: value.toInt()));
+                      },
+                    );
+                  }),
 
               SizedBox(height: 20),
               StreamBuilder<bool>(
